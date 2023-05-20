@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainWavez-result</title>
+    <link rel="shortcut icon" href="static/favicon.png" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-image: url(static/result.png);
+            background-position: right;
+            background-repeat: none;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .container .img {
+            width: 10%;
+            height: 6vh;
+            transform: translate(-430%, 30%);
+        }
+
+        .container .img a img {
+            width: 35%;
+        }
+
+        .container .img h3 {
+            position: absolute;
+            background-color: pink;
+            width: 130%;
+            height: 5vh;
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            padding-right: 10%;
+            border-radius: 10px;
+            transform: translate(10%, -134%);
+            z-index: -1;
+        }
+
+        .container .container1 {
+            width: 65%;
+            height: 25vh;
+            display: flex;
+            align-items: top;
+            justify-content: space-between;
+            padding: 3% 22%;
+            /* background-color: aqua; */
+        }
+
+        .container .container1 .box1 {
+            background-color: rgba(194, 140, 93, 0.916);
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 10px;
+        }
+
+        .container .container1 .box1 div {
+            width: 80%;
+            height: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: pink;
+            border-radius: 8px;
+            pointer-events: none;
+            font-size: 1.3rem;
+            color: black;
+            box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.8);
+        }
+
+        .container .container1 .box2 {
+            background-color: rgba(194, 140, 93, 0.916);
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 10px;
+        }
+
+        .container .container1 .box2 #sug {
+            width: 80%;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            background-color: pink;
+            border-radius: 8px;
+            pointer-events: none;
+            font-size: 1.3rem;
+            color: black;
+            padding: 1.5% 2%;
+            box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.8);
+        }
+
+        .container .container2 {
+            width: 45%;
+            height: 43vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            padding-bottom: 1%;
+            padding-top: 1%;
+            margin-top: 2%;
+            background-color: rgba(194, 140, 93, 0.916);
+            border-radius: 12px;
+        }
+
+        .container .container2 form {
+            height: 30vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .container .container2 form button {
+            margin-top: 2%;
+        }
+
+        .container .container2 form input {
+            width: 90%;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 1.2rem;
+            padding: 2% 3%;
+            background-color: rgba(17, 115, 82, 0.642);
+            border: transparent;
+            background-color: pink;
+        }
+
+        .container .container2 form input:hover {
+            background-color: white;
+            border: 2px solid rgb(241, 144, 59);
+        }
+
+        .container .container2 form textarea {
+            width: 90%;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 1.2rem;
+            padding: 2% 3%;
+            background-color: rgba(17, 115, 82, 0.642);
+            margin-top: 2%;
+            background-color: pink;
+        }
+
+        .container .container2 form textarea:hover {
+            background-color: white;
+            border: 2px solid rgb(241, 144, 59);
+        }
+
+        #btn {
+            width: 15%;
+            height: 6vh;
+            border-radius: 12px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            transition: transform 0.5s;
+            border: transparent;
+            color: rgb(10, 51, 51);
+            background-color: rgba(240, 248, 255, 0.539);
+            cursor: pointer;
+        }
+
+        #btn:hover {
+            transform: scale(1.2);
+            border: 2px solid rgb(255, 177, 108);
+            background-color: transparent;
+            color: peachpuff;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="img">
+            <a href="/index"><img src="static/back.png"></a>
+            <h3>Back to home page</h3>
+        </div>
+        <div class="container1">
+            <div class="box1">
+                <h1>RESULT</h1>
+                <div id="res">
+                    {{data1}}
+                </div>
+            </div>
+            <div class="box2">
+                <h1>SUGGESTION</h1>
+                <div id="sug">
+                    <div id="sug1">{{data2}}</div>
+                    <div id="sug2">{{data3}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="container2">
+            <h1>REVIEW</h1>
+            <form action="https://formspree.io/f/xyyaldze" method="post">
+                <input type="text" id="name" class="name1" name="Name-" placeholder="Enter your name">
+                <textarea name="Feedback-" rows="4" cols="50" placeholder="Open for your valuable feedback"
+                    id="feed"></textarea>
+                <button type="submit" id="btn" onclick="funvan()">post</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    function funvan() {
+
+        setTimeout(() => {
+            document.getElementById("name").value = " ";
+            document.getElementById("feed").value = " ";
+        }, 500);
+    }
+</script>
+</html>
